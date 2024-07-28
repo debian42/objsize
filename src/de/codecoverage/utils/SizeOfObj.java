@@ -414,9 +414,9 @@ public class SizeOfObj
 		 * size[8] = ObjectRef 
 		 * size[9] = Object...Mark+ClassWord
 		 */
-		private static final byte[] natSizes = new byte[] { 
-				/* 32Bit */      1, 1, 2, 2, 4, 8, 4, 8, 4, 8, 
-				/* 64Bit */      1, 1, 2, 2, 4, 8, 4, 8, 8, 16, 
+		private static final byte[] natSizes = new byte[] {
+				/* 32Bit */      1, 1, 2, 2, 4, 8, 4, 8, 4, 8,
+				/* 64Bit */      1, 1, 2, 2, 4, 8, 4, 8, 8, 12 /*since metaspaca always compressed class ptr?*/,
 				/* 64BitCOOPs */ 1, 1, 2, 2, 4, 8, 4, 8, 4, 12 };
 
 		private static final byte offsetNative = (byte) (TYPE_VM * 10);

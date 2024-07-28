@@ -197,14 +197,14 @@ public final class TestDriver {
         
 		long size = SizeOfObj.sizeOf(new byte[] { 0, 1, 2, 3, 4 }, out, out);
 		System.out.println("Size: " + size + " bytes");
-		if ((size == 24 && VMTYPE.BIT64CP.isEqual(type)) || (size == 32 && VMTYPE.BIT64.isEqual(type))) {
+		if ((size == 24 && VMTYPE.BIT64CP.isEqual(type)) || (size == 24 && VMTYPE.BIT64.isEqual(type))) {
 		} else	throw new IllegalStateException("byte[5] failed!");
 
 
 
     	size = SizeOfObj.sizeOf(new Output(), out, out);
 		System.out.println("Size: " + size + " bytes");
-		if ((size == 96 && VMTYPE.BIT64CP.isEqual(type)) || (size == 120 && VMTYPE.BIT64.isEqual(type))) {
+		if ((size == 96 && VMTYPE.BIT64CP.isEqual(type)) || (size == 112 && VMTYPE.BIT64.isEqual(type))) {
 		} else	throw new IllegalStateException("Output failed!");
 
 		TestRefHolder test = new TestRefHolder();
@@ -213,7 +213,7 @@ public final class TestDriver {
 		System.out.println("Size: " + size + " bytes");
 		System.out.println("Time: " + (System.currentTimeMillis() - sT) + " ms");
 		
-		if ((size == 6048 && VMTYPE.BIT64CP.isEqual(type)) || (size == 7912 && VMTYPE.BIT64.isEqual(type))) {
+		if ((size == 6048 && VMTYPE.BIT64CP.isEqual(type)) || (size == 7600 && VMTYPE.BIT64.isEqual(type))) {
 		} else	throw new IllegalStateException("TestRefHolder failed!");
 		
 		
@@ -221,14 +221,14 @@ public final class TestDriver {
 		size = SizeOfObj.sizeOf(dedupUtf, out);
 		System.out.println("Size: " + size + " bytes");
 		
-		if ((size == 48704 && VMTYPE.BIT64CP.isEqual(type)) || (size == 72816 && VMTYPE.BIT64.isEqual(type))) {
+		if ((size == 48704 && VMTYPE.BIT64CP.isEqual(type)) || (size == 72736 && VMTYPE.BIT64.isEqual(type))) {
 		} else	throw new IllegalStateException("TestStringDeDupUTF16 failed!");
 		
 		TestStringDeDupLatin1 dedupLatin1 = new TestStringDeDupLatin1();
 		size = SizeOfObj.sizeOf(dedupLatin1, out);
 		System.out.println("Size: " + size + " bytes");
 		
-		if ((size == 48464 && VMTYPE.BIT64CP.isEqual(type)) || (size == 72576 && VMTYPE.BIT64.isEqual(type))) {
+		if ((size == 48464 && VMTYPE.BIT64CP.isEqual(type)) || (size == 72496 && VMTYPE.BIT64.isEqual(type))) {
 		} else	throw new IllegalStateException("TestStringDeDupLatin1 failed!");
 		
 		System.out.println("OKAY");
