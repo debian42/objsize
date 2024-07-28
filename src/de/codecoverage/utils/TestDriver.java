@@ -213,7 +213,7 @@ public final class TestDriver {
 		System.out.println("Size: " + size + " bytes");
 		System.out.println("Time: " + (System.currentTimeMillis() - sT) + " ms");
 		
-		if ((size == 6048 && VMTYPE.BIT64CP.isEqual(type)) || (size == 7600 && VMTYPE.BIT64.isEqual(type))) {
+		if ((size == 6048 && VMTYPE.BIT64CP.isEqual(type)) || ( (size == 7616/*jdk21 Enum*/ || size == 7600) && VMTYPE.BIT64.isEqual(type))) {
 		} else	throw new IllegalStateException("TestRefHolder failed!");
 		
 		
